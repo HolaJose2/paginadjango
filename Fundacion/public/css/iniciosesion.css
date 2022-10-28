@@ -1,0 +1,53 @@
+body{
+    background: linear-gradient( #001e65c8 0% , white 100% );
+    background-repeat: no-repeat;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row{
+    box-shadow: 0px 1px 15px rgba(0, 0, 0,0.3);
+}
+
+.btn-register{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-register:hover{
+    color: white;
+}
+
+.card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background-image: url("../images/Tamara.webp")  ;
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-crearCuenta {
+    color: white !important;
+    background-color: #008915 !important;
+}
+
+.btn-crearCuenta:hover{
+    filter: brightness(130%);
+}
+
+.btn-inicio{
+    color: white !important;
+    background-color: #3b5998 !important;
+}
+
+.btn-inicio:hover{
+    filter: brightness(130%);
+}

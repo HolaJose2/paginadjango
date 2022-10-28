@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+/*para buscar el tipo de letra*/
+/*https://bennettfeely.com/clippy/  --- par organizar las imagenes con tamao de diversas formas */
+/*pagina para iconos https://boxicons.com/ */
+:root {
+    --padding-container: 100px 0;
+    /*100 px arriba y cero a los lados*/
+    --color-title: #001A49;
+    --secundary-color: #0B72B5;
+}
+
+
+.btn-wsp {
+    position: fixed;
+    width: 68px;
+    height: 68px;
+    line-height: 68px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0df053;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 50px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+
+
+.container {
+    /*contenedor de la pagina*/
+    width: 90%;
+    /*ocupacion de un 90%*/
+    max-width: 1200px;
+    /* un ancho de */
+    margin: 0 auto;
+    /* se centre verticalmente*/
+    overflow: hidden;
+    padding: var(--padding-container);
+    /* se llama la variable declarada en root*/
+}
+
+.hero {
+    width: 100%;
+    /*para poner la imagen de fondo */
+    height: 100vh;
+    /*100% de un alto de la pantalla*/
+    min-height: 600px;
+    /*alto minimo*/
+    max-height: 800px;
+    /*Alto max*/
+    position: relative;
+    /*para que se posicione absolutamente a el contenedor */
+    display: grid;
+    /*para crear dos filas */
+    grid-template-rows: 600px 1fr;
+    /* que sean 100 px  la primera fila y la segunda toma el contenido sobrante */
+    color: #fff;
+    
+    /*se le da el color blanco a las letras y todos los elmentos dentro de la clase hero*/
+}
+
+.hero::before {
+    /*para poder acomodar la imagen de fondo este seria hijo de la clase hero*/
+    content: "";
+    position: absolute;
+    /*para que se posicione absolutamente a su padre*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url("../images/gatos.webp");
+    /*se pone la transparencia  la imagen */
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    /*para darle la forma  a la imagen de fondo */
+    /*se pone este a -index para enviar la  imagen de fondo y que el texto este al frente */
+}
+
+
+/* Nav */
+
+#cabecera {
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);;
+    height: 100px !important;
+    display:flex;
+    position:fixed;
+    /*para centrarlos verticalmente*/
+    text-transform: uppercase;
+    /*para poner el texto en mayuscula*/
+}
+
+.nav{
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    margin:auto;
+
+}
+
+
+.nav__logo{
+    width: max-content;
+}
+
+.nav__title a {
+    margin: auto;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    /*para el grosor*/
+
+}
+
+
+.nav__link {
+    margin-left: 5vh;
+    display: grid;
+    /*se define una grid*/
+    grid-auto-flow: column;
+    /* se le indica que por columnas*/
+    grid-auto-columns: max-content;
+    /* que las columnas este a su max contenido*/
+    gap: 2em;
+
+}
+
+.nav__items {
+    list-style: none;
+
+    /*para quitarle la opcion de lista */
+}
+
+.nav__links {
+    color: white;
+    text-decoration: none;
+    /*para quitarle os puntos*/
+    position: relative;
+    
+}
+
+.nav__links:hover {
+    border-bottom: 4px solid #4a8ff7;
+    filter: brightness(130%);
+    /*para ponerle brillo a el btn*/
+}
+
+.nav__menu {
+    margin-left: auto;
+    cursor: pointer;
+    /*para que se ponga el icono de la manito en el menu de navegacion*/
+    display: none;
+    /* para que solo aparezca cuando estemos en dispositivos moviles*/
+}
+
+.nav__img {
+    /*para el menu hamburgesa*/
+    display: block;
+    width: 30px;
+}
+
+.nav__close {
+    display: var(--show, none);
+    /*para qe no se muestre si no estamos en un dispositivo movil*/
+}
+
+/* Hero container */
+
+.hero__container {
+    padding-top: 200px;
+    max-width: 800px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero__title {
+    font-size: 3rem;
+}
+
+.hero__paragraph {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.cta {
+    display: inline-block;
+    background-color: var(--secundary-color);
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+.cta:hover {
+    /* se genera una seudo clase  donde se da la animacion de dar mas claridad  el botton */
+    filter: brightness(130%);
+    /*para ponerle brillo a el btn*/
+    background-color: #4a8ff7;
+    color: white;
+
+}
+
+.cta1:hover {
+    filter: brightness(130%);
+    /*para ponerle brillo a el btn*/
+    background-color: whitesmoke;
+    color: #5454D4;
+}
+
+
+/* About */
+
+.about {
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+
+.about__paragraph {
+    line-height: 1.7;
+}
+
+.about__main {
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+
+.about__icons {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon {
+    width: 40px;
+}
+
+/* Knowledge */
+
+.knowledge {
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow: hidden;
+}
+
+.knowledge__container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledege__texts {
+    text-align: justify;
+    padding: 40px;
+}
+
+.knowledege__texts>.subtitle {
+    text-align: center;
+}
+
+.knowledege__texts>.cta {
+    width: max-content;
+    display: flex;
+    margin: auto;
+
+}
+
+.knowledge__picture {
+    max-width: 280px;
+    /* el tamaño de la imagen*/
+}
+
+.knowledge__paragraph {
+    line-height: 1.7;
+    /*espacio den tro de cada linea de texto*/
+    margin-bottom: 15px;
+    /* la margen del botton*/
+}
+
+.knowledge__img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+
+/* Estilos de la opcion de el super padrino */
+
+.price {
+    text-align: center;
+}
+
+.price__table {
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.price__element {
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.price__element--best {
+    width: 370px;
+    padding: 60px 40px;
+    background-color: #4a8ff7;
+    /* color de fondo*/
+    --color-plan: rgb(255 255 255 / 75%);
+    --color-price: #fff;
+    --bg-cta: #0d5aa3fd;
+    /*color del botton*/
+    --color-cta: #FFF;
+    --color-items: #fff;
+}
+
+
+.price__name {
+    color: var(--color-plan);
+    /*el color de la letra*/
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.price__price {
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items {
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    /*para que sea circular*/
+    color: var(--color-items);
+}
+
+.price__cta {
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+
+
+/* carusel de imagenes  */
+
+.testimony {
+    background-color: #e5e5f7;
+}
+
+.testimony__container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony__body {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.testimony__body--show {
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.testimony__texts {
+    max-width: 700px;
+}
+
+.testimony__course {
+    background-color: rgb(122, 152, 243);
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 25px;
+
+}
+
+.testimony__arrow {
+    width: 90%;
+    cursor: pointer;
+}
+
+/* Questions */
+
+.questions {
+    text-align: center;
+}
+
+.questions__container {
+    display: grid;
+    gap: 2em;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.questions__padding {
+    padding: 0;
+    transition: padding .3s;
+    border: 1px solid #5454D4;
+    border-radius: 6px;
+}
+
+.questions__padding--add {
+    padding-bottom: 30px;
+}
+
+.questions__answer {
+    padding: 0 30px 0;
+    overflow: hidden;
+}
+
+.questions__title {
+    text-align: left;
+    display: flex;
+    font-size: 20px;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    color: var(--color-title);
+    justify-content: space-between;
+}
+
+.questions__arrow {
+    border-radius: 50%;
+    background-color: var(--color-title);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: transform .3s;
+}
+
+.questions__arrow--rotate {
+    transform: rotate(180deg);
+}
+
+.questions__show {
+    text-align: left;
+    height: 0;
+    transition: height .3s;
+}
+
+.questions__img {
+    display: block;
+}
+
+.questions__copy {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #1D293F;
+
+}
+
+.footer__title {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.footer__title,
+.footer__newsletter {
+    color: #fff;
+}
+
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+
+
+
+.footer__copy {
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright {
+    font-weight: 300;
+}
+
+.footer__icons {
+    margin-bottom: 10px;
+}
+
+.footer__img {
+    width: 30px;
+}
+
+.logo {
+
+    width: 95px;
+    margin-left: 2.5%;
+    ;
+
+    z-index: -1;
+}
+
+/* Media queries */
+
+@media (max-width:1200px) {
+    .nav{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .nav__menu {
+        display: block;
+        position: relative;
+        padding-right: 20px;
+    }
+
+    .nav__logo{
+        padding-left: 30px;
+    }
+
+    .nav__link--menu {
+        margin-left: 0;
+        position: fixed;
+        background-color: #000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+    }
+
+    .nav__link--show {
+        --show: block;
+        opacity: 1;
+        pointer-events: unset;
+
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+
+    .about__main {
+        gap: 2em;
+    }
+
+    .about__icons:last-of-type {
+        grid-column: 1/-1;
+    }
+
+
+    .knowledge__container {
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .knowledge__picture {
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    .testimony__container {
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .testimony__body {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items: center;
+    }
+
+
+    .testimony__img {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .questions__copy {
+        width: 100%;
+    }
+
+    .footer__container {
+        flex-wrap: wrap;
+    }
+
+    .nav--footer {
+        width: 100%;
+        justify-items: center;
+    }
+
+    .nav__link--footer {
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .footer__form {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .footer__input {
+        flex: 1;
+    }
+
+}
+
+@media (max-width:600px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__paragraph {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+    }
+
+    .price__element {
+        width: 90%;
+    }
+
+    .price__element--best {
+        width: 90%;
+        /* padding: 40px; */
+    }
+
+    .price__price {
+        font-size: 2rem;
+    }
+
+    .testimony {
+        --padding-container: 60px 0;
+    }
+
+    .testimony__container {
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9em;
+    }
+
+    .testimony__arrow {
+        width: 100%;
+    }
+
+    .testimony__course {
+        margin-top: 15px;
+    }
+
+    .questions__title {
+        font-size: 1rem;
+    }
+
+    .footer__title {
+        justify-self: start;
+        margin-bottom: 15px;
+    }
+
+    .nav--footer {
+        padding-bottom: 60px;
+    }
+
+    .nav__link--footer {
+        justify-content: space-between;
+    }
+
+    .footer__inputs {
+        flex-wrap: wrap;
+    }
+
+    .footer__input {
+        flex-basis: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+    .footer__submit {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
